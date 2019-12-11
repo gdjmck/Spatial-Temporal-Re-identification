@@ -139,4 +139,4 @@ distribution = spatial_temporal_distribution(train_cam, train_label_order, train
 #         gauss_smooth(distribution[i][j])
 
 result = {'distribution':distribution}
-scipy.io.savemat('model/'+name+'/'+'pytorch_result2.mat',result)
+scipy.io.savemat('pytorch_result2.mat',result)

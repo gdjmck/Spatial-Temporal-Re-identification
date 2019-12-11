@@ -88,7 +88,7 @@ use_gpu = torch.cuda.is_available()
 # Load model
 #---------------------------
 def load_network(network):
-    save_path = os.path.join('./model',name,'net_%s.pth'%opt.which_epoch)
+    save_path = os.path.join('/home/chk/Market-1501','net_%s.pth'%opt.which_epoch)
     network.load_state_dict(torch.load(save_path))
     return network
 
@@ -195,4 +195,4 @@ query_feature = extract_feature(model,dataloaders['query'])
 
 # Save to Matlab for check
 result = {'gallery_f':gallery_feature.numpy(),'gallery_label':gallery_label,'gallery_cam':gallery_cam,'gallery_frames':gallery_frames,'query_f':query_feature.numpy(),'query_label':query_label,'query_cam':query_cam,'query_frames':query_frames}
-scipy.io.savemat('model/'+name+'/'+'pytorch_result.mat',result)
+scipy.io.savemat('./pytorch_result.mat',result)
